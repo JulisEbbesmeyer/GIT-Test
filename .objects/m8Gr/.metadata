@@ -1,0 +1,12 @@
+﻿{
+  "Name": "Chat  Vanessa Voß  Microsoft Teams",
+  "Type": "App",
+  "Id": "m8Gre73-mUeEgah2871UUw",
+  "Reference": "ZunTK1tKg0SCWbJs7_5FrQ/m8Gre73-mUeEgah2871UUw",
+  "Created": "2025-10-21T14:07:32.2432845Z",
+  "Updated": "2025-10-21T14:07:32.2432845Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.10.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.11.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

@@ -1,0 +1,139 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Process" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property sap2010:Annotation.AnnotationText="Transaction item to be processed." Name="in_TransactionItem" Type="InArgument(ui:QueueItem)" />
+    <x:Property sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>818.4,454.4</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="50">
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Windows.Forms</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Services.RuntimeAnalyze</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="80">
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.Windows.Forms</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="1276.0000000000002,962.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="449.6,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Started Process&quot;]" />
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Chat  Vanessa Voß  Microsoft Teams" sap:VirtualizedContainerService.HintSize="449.6,609.6" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="e32d5199-450c-45fe-b35c-811f8c24c4fe" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,286.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click" sap:VirtualizedContainerService.HintSize="382.4,224.8" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="e32d5199-450c-45fe-b35c-811f8c24c4fe" Version="V4">
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-1928, -591, 1936, 1048" ContentHash="Ttg-3rCNLki3x6ZeNTlNQw" FilePath="MSTeams_8wekyb3d8bbwe!MSTeams" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAU1SURBVFhH7Zj9T1tlFMcPOud0aohTM+OyhE1jNBrjoonZEGgppe8to6UtdDAW8WUylbdBCwgF95smTn9Rf1o2h3PRAeOdASsveyHGYZTpFs2cU8YGP6DyBxxz7n2ecu/TQguhbj/sm3zDzb233A/nfJ/T5wJwR3e0LCUBwF3MdHx7yB+cTg403QzWNs/O1TbPIvMcnbsdQJNqm2cnFGCiJ24pZE3jVHMUKJWrG/5qFj/HYnAvANwtXlhNrQk0zfwtAokONM38Q/eyzyTZ3Wc+cXjHkdvuOXswIVXWmw5sEmEWMwCsp8/YBDgBcnW1Pe2dLSLIYgaAhwBgrQimdCLanVxVf3W+uuFPyhkGgjewtmkmAs4fvPEvq2CyCKX02+XfPyU+IKyCPWMT+XtGkewtHkXP7hHJ7qIRdBeOYF7hMLp2DaPLN4xOXwidBSHMLQjhzvzTmOOV7S4ck0BFyL1l333KMrhBhBIqeL/IFRYH8+6W4SSwIgIbwTwC28XAfJFgDs9pdLiH0J43RFVAf+P1MNz++j8uA8BmtgjW623tR0QwssHReYit6ujiYB4lGKuak1VNBgthDoOTwDxDaHcPoS1vEK2uQSwpHcHq968R5Pwb+8Y+B4CtlD32GBotm7KsJ1qUcHpb61EAeJxdjy5eNSUYbyeB5eYrqhYFjGxxDlCbXgSAFwDgWfZQDsd1DwA8AQDPAcA2dt9Gdn5xRctZLHE4i3MQzbkDkgHgQQB4AADWsVXJv5uVpjzex+4V74s+DxfauZCzyZ/nJP90cS4MRcfkHyfnJDCqGoGZdp5CY04/Fr/Zj1V1v2Og6WbEauYuD1xDs3MQbe4xdHjPC3k8/0PUVos54+3kOeOSKsbaqQQjGxx9cQGSs+0daHWF0O45F7FgWAfUknKmXJ1CzriUYGE4Rz8a7H2Ybe+NG1BnOS5V0e45Gw3wEZEP1GNDBqOxwXPGFa1qBJZt60W9tSduQK2xRfpdNveZaICPiXygmmeK1clzxqUG65PBbD2YZe1BnaU7bkCN8Siac0/FDyiODTFnXAZFO5VgOnMXZpq7lgH45fIACcymmGdizrhkMLmdWQRmkcEyTZ2oNXYkDjDcTjbPxJxxyVUjMFY1CawTNYYOzDCcTBzgYmOD54xrAawLtaZO1BhlsIzsdkzXtycOUNlOdc56pZxJ7WQ542AaBVhaVhu+qmtdBuAyF0l4nrGxoc5ZtypnMthJTJfg2sJwqZkn4gbUmo4tBbhB5APVPBNXJ8+Zqp1qsB3ab3G75hsZsD42YKaZAAciBrU1b/gSfz1QKdvWOxEBFqOdHIzDpemO4ev7RrGq/mpMQK3pKzQ7IwFTMz/bG3Nns4TWafT141mmD1BpvekAGm0forfwayytuCDtB8VdtdKlFb+gznwcLc4h1Xex1tTyBQA8uuiOJg6tseQcrCx8rQPV7pRa+9Z741hR+xv6g9MRUEq7fL3X9bY2tLqG0eE9hxZX6PIraR+V02ZW8Xq6IiVte7loS2nFhal390+i5GryRSyruYSVdVewhrb7S1SvpmFqCgCeYRvW59nPFHqhirrNWoHW5noPFRCI0v7GaTl3S8BJ1Ss44mObVXr/oM3qqv93gfLxsK+4tVF8eCwXlXTXsUqtOGPxiv7iza78w5X+4PS8CCKa7nH7WsrYAF6VNsYjGgUbU7ampxaVdH9cWXflVxGMztG1lCczdrDh+7/BcdEDaXtOb2lPsze6l5jpmM7RNRq8CW/rUqKHU9vpFZOCT6ZjOndLwe7oP+yr91vlZVFTAAAAAElFTkSuQmCC" InformativeScreenshot="89d250851059cdd61c7be1f710b029e4.png" Reference="ZunTK1tKg0SCWbJs7_5FrQ/jYQlhQLF8UmFSPaXVSqALA" Selector="&lt;wnd app='ms-teams.exe' appid='MSTeams_8wekyb3d8bbwe!MSTeams' title='Chat | Vanessa Voß | Microsoft Teams' /&gt;" Title="Chat | Vanessa Voß | Microsoft Teams" Version="V1" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+    <ui:Comment DisplayName="Comment (placeholder)" sap:VirtualizedContainerService.HintSize="449.6,79.2" sap2010:WorkflowViewState.IdRef="Comment_1" Text="//  Invoke steps of the process" />
+  </Sequence>
+</Activity>

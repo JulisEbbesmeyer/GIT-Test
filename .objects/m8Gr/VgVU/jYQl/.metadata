@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Chat  Vanessa Voß  Microsoft Teams",
+  "Type": "Screen",
+  "Id": "jYQlhQLF8UmFSPaXVSqALA",
+  "Reference": "ZunTK1tKg0SCWbJs7_5FrQ/jYQlhQLF8UmFSPaXVSqALA",
+  "ParentRef": "ZunTK1tKg0SCWbJs7_5FrQ/VgVUio0KAEKMSA2SC1qRag",
+  "Created": "2025-10-21T14:07:32.2984097Z",
+  "Updated": "2025-10-21T14:07:32.2984097Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.10.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.11.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}
